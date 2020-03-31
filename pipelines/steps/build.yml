@@ -1,0 +1,19 @@
+steps:
+- task: UseDotNet@2
+  displayName: 'Set the .NET Core Version to 3.0.x'
+  inputs:
+    version: '3.0.x'
+    packageType: runtime
+
+- task: DotNetCoreCLI@2
+  displayName: 'Application Restore'
+  inputs:
+    command: 'restore'
+    feedsToUse: 'select'
+    projects: '**/*.csproj'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Application Build'
+  inputs:
+    command: 'build'
+    projects: '**/*.csproj'
