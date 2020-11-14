@@ -22,13 +22,5 @@ namespace FastSharper.Tests
 
             Assert.Catch<InvalidCastException>(() => source.CastTo<byte>());
         }
-
-        [Test]
-        public void Will_throw_exception_because_source_is_null()
-        {
-            string source = null!;
-
-            Assert.Catch<ArgumentNullException>(() => source.CastTo<byte>());
-        }
     }
 }

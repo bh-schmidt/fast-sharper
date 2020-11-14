@@ -22,13 +22,5 @@ namespace FastSharper.Tests
 
             Assert.Catch<Exception>(() => source.To<int>());
         }
-
-        [Test]
-        public void Will_throw_exception_because_the_source_is_null()
-        {
-            string source = null!;
-
-            Assert.Catch<ArgumentNullException>(() => source.To<int>());
-        }
     }
 }
